@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信鸽 - 安全高效的即时通讯平台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            500: '#07C160',
+                            600: '#06AD56',
+                        },
+                        neutral: {
+                            50: '#F7F7F7',
+                            100: '#EDEDED',
+                            900: '#191919',
+                            500: '#888888',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-balance {
+                text-wrap: balance;
+            }
+            .scroll-smooth {
+                scroll-behavior: smooth;
+            }
+            .fade-up {
+                opacity: 0;
+                transform: translateY(24px);
+                transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+            }
+            .fade-up.show {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .card-float {
+                transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .card-float:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.08);
+            }
+            .btn-grow {
+                transition: all 0.25s ease;
+            }
+            .btn-grow:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 20px -8px rgba(7, 193, 96, 0.35);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans bg-neutral-100 text-neutral-900 scroll-smooth">
+    <!-- 顶部导航 -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/75 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <!-- 软件Logo直链 -->
+                <img src="https://i.ibb.co/67bHSKkM/IMG-20260625-222340.png" alt="加载中" class="w-9 h-9 rounded-xl object-cover">
+                <span class="text-xl font-semibold">信鸽</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm text-gray-600">
+                <a href="#features" class="hover:text-primary-500 transition-colors">功能特性</a>
+                <a href="#security" class="hover:text-primary-500 transition-colors">安全保障</a>
+                <a href="#download" class="hover:text-primary-500 transition-colors">下载</a>
+                <a href="#about" class="hover:text-primary-500 transition-colors">关于</a>
+            </div>
+            <a href="#download" class="btn-grow bg-primary-500 text-white px-5 py-2 rounded-full text-sm font-medium">
+                立即下载
+            </a>
+        </div>
+    </nav>
+
+    <!-- 首屏主视觉 -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="fade-up">
+                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-balance mb-6">
+                    信鸽<br>
+                    <span class="text-primary-500">轻量可靠</span>的即时通讯
+                </h1>
+                <p class="text-neutral-500 text-lg mb-10 max-w-md">
+                    专注安全与流畅体验，支持大文件传输、完整好友群聊体系，多端无缝适配，为个人与团队打造稳定的沟通工具。
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <!-- Windows下载直链 -->
+                    <a href="https://s1.img-e.com/20260625/6a3d418e63ea2.png" class="btn-grow bg-primary-500 text-white px-8 py-3.5 rounded-full font-medium flex items-center gap-2">
+                        <i class="fa fa-download"></i>
+                        Windows 版下载
+                    </a>
+                    <!-- Android下载直链 -->
+                    <a href="https://s1.img-e.com/20260625/6a3d418e63ea2.png" class="btn-grow bg-white text-primary-500 border border-primary-500 px-8 py-3.5 rounded-full font-medium flex items-center gap-2">
+                        <i class="fa fa-android"></i>
+                        Android 版下载
+                    </a>
+                </div>
+                <p class="text-xs text-gray-400 mt-4">当前版本 V1.5.00 · 永久免费注册</p>
+            </div>
+            <div class="fade-up" style="transition-delay: 0.15s">
+                <!-- 软件界面展示图直链 -->
+                <img src="https://i.ibb.co/fVk5CFV9/Screenshot-2026-06-25-22-39-51-932-tv-danmaku-bili-edit.jpg" alt="加载中..." class="rounded-2xl shadow-2xl w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心功能 -->
+    <section id="features" class="py-20 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-3xl font-bold mb-4">核心功能特性</h2>
+                <p class="text-neutral-500 max-w-xl mx-auto">从日常聊天到团队协作，覆盖你需要的全部通讯能力</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-float bg-neutral-50 rounded-2xl p-8 fade-up">
+                    <div class="w-12 h-12 bg-primary-500/10 rounded-xl flex items-center justify-center text-primary-500 text-xl mb-5">
+                        <i class="fa fa-comments-o"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">实时流畅聊天</h3>
+                    <p class="text-neutral-500 text-sm leading-relaxed">
+                        毫秒级消息送达，支持文字、表情与文件传输，聊天体验顺滑自然，沟通无延迟。
+                    </p>
+                </div>
+
+                <div class="card-float bg-neutral-50 rounded-2xl p-8 fade-up" style="transition-delay: 0.1s">
+                    <div class="w-12 h-12 bg-primary-500/10 rounded-xl flex items-center justify-center text-primary-500 text-xl mb-5">
+                        <i class="fa fa-file-o"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">大文件极速传输</h3>
+                    <p class="text-neutral-500 text-sm leading-relaxed">
+                        支持单文件最高150MB传输，稳定可靠不压缩，文档、安装包一键发送，无需网盘中转。
+                    </p>
+                </div>
+
+                <div class="card-float bg-neutral-50 rounded-2xl p-8 fade-up" style="transition-delay: 0.2s">
+                    <div class="w-12 h-12 bg-primary-500/10 rounded-xl flex items-center justify-center text-primary-500 text-xl mb-5">
+                        <i class="fa fa-shield"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">安全加密防护</h3>
+                    <p class="text-neutral-500 text-sm leading-relaxed">
+                        密码哈希加密存储，集成行为验证码防恶意注册，多重机制保障账号与聊天数据安全。
+                    </p>
+                </div>
+
+                <div class="card-float bg-neutral-50 rounded-2xl p-8 fade-up" style="transition-delay: 0.3s">
+                    <div class="w-12 h-12 bg-primary-500/10 rounded-xl flex items-center justify-center text-primary-500 text-xl mb-5">
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">完整群聊体系</h3>
+                    <p class="text-neutral-500 text-sm leading-relaxed">
+                        支持创建群聊、邀请好友入群，配备入群审批机制，管理员可灵活管理群成员与权限。
+                    </p>
+                </div>
+
+                <div class="card-float bg-neutral-50 rounded-2xl p-8 fade-up" style="transition-delay: 0.4s">
+                    <div class="w-12 h-12 bg-primary-500/10 rounded-xl flex items-center justify-center text-primary-500 text-xl mb-5">
+                        <i class="fa fa-undo"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">消息可控撤回</h3>
+                    <p class="text-neutral-500 text-sm leading-relaxed">
+                        支持2分钟内撤回消息与文件，撤回后可重新编辑，服务器同步删除对应文件，不留痕迹。
+                    </p>
+                </div>
+
+                <div class="card-float bg-neutral-50 rounded-2xl p-8 fade-up" style="transition-delay: 0.5s">
+                    <div class="w-12 h-12 bg-primary-500/10 rounded-xl flex items-center justify-center text-primary-500 text-xl mb-5">
+                        <i class="fa fa-mobile"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">多端全平台适配</h3>
+                    <p class="text-neutral-500 text-sm leading-relaxed">
+                        响应式设计完美适配桌面端与移动端，独立移动端聊天页面，外出使用同样流畅顺手。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 安全保障板块 -->
+    <section id="security" class="py-20 px-6 bg-neutral-50">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="fade-up">
+                <!-- 安全展示图直链 -->
+                <img src="https://i.ibb.co/twbqTzDp/2026062522464192.jpg" alt="安全防护" class="rounded-2xl shadow-xl w-full">
+            </div>
+            <div class="fade-up" style="transition-delay: 0.2s">
+                <h2 class="text-3xl font-bold mb-6">全方位安全保障<br>让沟通更安心</h2>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 shrink-0 bg-primary-500/10 rounded-lg flex items-center justify-center text-primary-500">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">数据加密存储</h4>
+                            <p class="text-sm text-neutral-500">账号密码采用哈希加密存储，敏感数据多重防护，杜绝明文泄露风险。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 shrink-0 bg-primary-500/10 rounded-lg flex items-center justify-center text-primary-500">
+                            <i class="fa fa-user-secret"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">防恶意注册登录</h4>
+                            <p class="text-sm text-neutral-500">集成极验4.0行为验证，智能识别机器操作，有效抵御批量注册与暴力破解。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 shrink-0 bg-primary-500/10 rounded-lg flex items-center justify-center text-primary-500">
+                            <i class="fa fa-ban"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">违规账号管控</h4>
+                            <p class="text-sm text-neutral-500">完善的封禁管理体系，管理员可实时处置违规账号，维护健康的社区环境。</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 shrink-0 bg-primary-500/10 rounded-lg flex items-center justify-center text-primary-500">
+                            <i class="fa fa-refresh"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-1">在线迭代更新</h4>
+                            <p class="text-sm text-neutral-500">支持网页端在线更新系统，自动下载安装补丁，第一时间修复漏洞与优化体验。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 细节亮点 -->
+    <section class="py-20 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-3xl font-bold mb-4">贴心细节 处处用心</h2>
+                <p class="text-neutral-500 max-w-xl mx-auto">兼顾实用与体验，每一个小功能都为提升沟通效率设计</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="text-center p-6 fade-up card-float rounded-xl">
+                    <i class="fa fa-circle-o text-primary-500 text-2xl mb-4"></i>
+                    <p class="text-sm font-medium">好友在线状态</p>
+                    <p class="text-xs text-neutral-500 mt-1">实时查看好友是否在线</p>
+                </div>
+                <div class="text-center p-6 fade-up card-float rounded-xl" style="transition-delay: 0.1s">
+                    <i class="fa fa-search text-primary-500 text-2xl mb-4"></i>
+                    <p class="text-sm font-medium">快速好友搜索</p>
+                    <p class="text-xs text-neutral-500 mt-1">一键查找添加联系人</p>
+                </div>
+                <div class="text-center p-6 fade-up card-float rounded-xl" style="transition-delay: 0.2s">
+                    <i class="fa fa-music text-primary-500 text-2xl mb-4"></i>
+                    <p class="text-sm font-medium">内置音乐播放</p>
+                    <p class="text-xs text-neutral-500 mt-1">聊天同时随心听歌</p>
+                </div>
+                <div class="text-center p-6 fade-up card-float rounded-xl" style="transition-delay: 0.3s">
+                    <i class="fa fa-save text-primary-500 text-2xl mb-4"></i>
+                    <p class="text-sm font-medium">图片右键保存</p>
+                    <p class="text-xs text-neutral-500 mt-1">一键保存聊天图片</p>
+                </div>
+                <div class="text-center p-6 fade-up card-float rounded-xl" style="transition-delay: 0.4s">
+                    <i class="fa fa-globe text-primary-500 text-2xl mb-4"></i>
+                    <p class="text-sm font-medium">世界大厅群聊</p>
+                    <p class="text-xs text-neutral-500 mt-1">全员公共交流频道</p>
+                </div>
+                <div class="text-center p-6 fade-up card-float rounded-xl" style="transition-delay: 0.5s">
+                    <i class="fa fa-commenting-o text-primary-500 text-2xl mb-4"></i>
+                    <p class="text-sm font-medium">用户反馈系统</p>
+                    <p class="text-xs text-neutral-500 mt-1">问题建议快速响应</p>
+                </div>
+                <div class="text-center p-6 fade-up card-float rounded-xl" style="transition-delay: 0.6s">
+                    <i class="fa fa-bolt text-primary-500 text-2xl mb-4"></i>
+                    <p class="text-sm font-medium">缓存加速加载</p>
+                    <p class="text-xs text-neutral-500 mt-1">静态资源秒开体验</p>
+                </div>
+                <div class="text-center p-6 fade-up card-float rounded-xl" style="transition-delay: 0.7s">
+                    <i class="fa fa-cog text-primary-500 text-2xl mb-4"></i>
+                    <p class="text-sm font-medium">会话时长配置</p>
+                    <p class="text-xs text-neutral-500 mt-1">自定义登录有效时长</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下载区域 -->
+    <section id="download" class="py-24 px-6 bg-primary-500 text-white">
+        <div class="max-w-4xl mx-auto text-center fade-up">
+            <h2 class="text-3xl font-bold mb-4">立即下载 信鸽</h2>
+            <p class="text-white/80 mb-10 max-w-lg mx-auto">全平台覆盖，随时随地开启顺畅沟通</p>
+            
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="https://s1.img-e.com/20260625/6a3d418e63ea2.png" class="btn-grow bg-white text-primary-500 px-8 py-4 rounded-full font-medium flex items-center gap-3">
+                    <i class="fa fa-windows text-xl"></i>
+                    <div class="text-left">
+                        <div class="text-sm">Windows 客户端</div>
+                        <div class="text-xs opacity-70">V1.5.00</div>
+                    </div>
+                </a>
+                <a href="https://s1.img-e.com/20260625/6a3d418e63ea2.png" class="btn-grow bg-white/10 border border-white/20 text-white px-8 py-4 rounded-full font-medium flex items-center gap-3">
+                    <i class="fa fa-android text-xl"></i>
+                    <div class="text-left">
+                        <div class="text-sm">Android 客户端</div>
+                        <div class="text-xs opacity-70">V1.5.00</div>
+                    </div>
+                </a>
+                <a href="https://s1.img-e.com/20260625/6a3d418e63ea2.png" class="btn-grow bg-white/10 border border-white/20 text-white px-8 py-4 rounded-full font-medium flex items-center gap-3">
+                    <i class="fa fa-chrome text-xl"></i>
+                    <div class="text-left">
+                        <div class="text-sm">网页版登录</div>
+                        <div class="text-xs opacity-70">无需下载</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer id="about" class="bg-gray-900 text-gray-400 py-12 px-6 text-sm">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-10">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="https://i.ibb.co/67bHSKkM/IMG-20260625-222340.png" alt="信鸽" class="w-8 h-8 rounded-lg">
+                        <span class="text-white font-semibold text-lg">信鸽</span>
+                    </div>
+                    <p class="text-xs leading-relaxed">
+                        轻量、安全、高效的即时通讯软件，为个人与小型团队打造顺畅的沟通体验。
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-white font-medium mb-4">产品</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#features" class="hover:text-white transition-colors">功能介绍</a></li>
+                        <li><a href="#download" class="hover:text-white transition-colors">下载中心</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">更新日志</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-medium mb-4">支持</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:text-white transition-colors">常见问题</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">反馈建议</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-medium mb-4">法律</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:text-white transition-colors">用户协议</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">隐私政策</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">免责声明</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+                <p>© 2026 信鸽 Xinge. All rights reserved.</p>
+                <p>基于 MIT 协议开源</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-sm');
+                navbar.classList.replace('bg-white/75', 'bg-white/95');
+            } else {
+                navbar.classList.remove('shadow-sm');
+                navbar.classList.replace('bg-white/95', 'bg-white/75');
+            }
+        });
+
+        // 滚动渐入动画
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        document.querySelectorAll('.fade-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
