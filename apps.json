@@ -33,15 +33,15 @@
   },
   {
     "id": "movie_001",
-    "name": "夏日信笺",
+    "name": "芙宁娜触手4K",
     "type": "movie",
     "year": "2025",
     "region": "日本",
     "status": "完结",
     "category": "电影",
-    "poster": "https://picsum.photos/seed/silver-movie-1/600/850",
+    "poster": "https://vdownload.hembed.com/image/thumbnail/408303l.jpg?secure=fTaz08CQc3W1fpQYjr9H_g==,1793413988",
     "description": "一封迟到了很多年的信，重新打开了一段关于夏天的记忆。",
     "tags": ["电影", "青春", "治愈"],
-    "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+    "videoUrl": "https://vdownload.hembed.com/408303-720p.mp4?secure=Sgag06NuFQDJXT2jJfPIZA==,1790881223"
   }
 ]
