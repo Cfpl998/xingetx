@@ -6,10 +6,10 @@
     "year": "2026",
     "region": "日本",
     "status": "连载中",
-    "category": "治愈",
+    "category": "里番",
     "poster": "https://picsum.photos/seed/silver-anime-1/600/850",
     "description": "一个关于月光、校园与温柔日常的治愈故事。",
-    "tags": ["治愈", "校园", "日常"],
+    "tags": ["2D", "3D", "里番", "三次元", "真人"],
     "episodes": [
       {"title": "第 1 集 · 月光落在窗边", "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"},
       {"title": "第 2 集 · 樱色的约定", "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"}
@@ -17,18 +17,18 @@
   },
   {
     "id": "anime_002",
-    "name": "星屑列车",
+    "name": "迷雾之塔",
     "type": "anime",
-    "year": "2025",
+    "year": "2026",
     "region": "日本",
-    "status": "完结",
-    "category": "冒险",
-    "poster": "https://picsum.photos/seed/silver-anime-2/600/850",
+    "status": "连载中",
+    "category": "里番",
+    "poster": "https://vdownload.hembed.com/image/thumbnail/408115l.jpg?secure=wtKCfais1fcBk1Byer6V-Q==,1793414074",
     "description": "驶向夜空尽头的列车，载着一群寻找答案的旅人。",
-    "tags": ["冒险", "奇幻", "旅行"],
+    "tags": ["2D", "3D", "里番", "三次元", "真人"],
     "episodes": [
-      {"title": "第 1 集 · 夜车启程", "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"},
-      {"title": "第 2 集 · 星海之间", "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"}
+      {"title": "第 1 集 · 探险家与自动人偶在塔中迷路", "videoUrl": "https://vdownload.hembed.com/406538-sc-720p.mp4?secure=MY0hBFog7oG4Vb2OgY0j2w==,1790964013"},
+      {"title": "第 2 集 · 探险家与自动机遇见黎明", "videoUrl": "https://vdownload.hembed.com/408115-sc-720p.mp4?secure=XSnTxG2Og0h1XEExBANuRw==,1790964013"}
     ]
   },
   {
@@ -38,10 +38,10 @@
     "year": "2025",
     "region": "日本",
     "status": "完结",
-    "category": "电影",
+    "category": "3D",
     "poster": "https://vdownload.hembed.com/image/thumbnail/408303l.jpg?secure=fTaz08CQc3W1fpQYjr9H_g==,1793413988",
     "description": "一封迟到了很多年的信，重新打开了一段关于夏天的记忆。",
-    "tags": ["电影", "青春", "治愈"],
+    "tags": ["2D", "3D", "里番", "三次元", "真人"],
     "videoUrl": "https://vdownload.hembed.com/408303-720p.mp4?secure=Sgag06NuFQDJXT2jJfPIZA==,1790881223"
   }
 ]
